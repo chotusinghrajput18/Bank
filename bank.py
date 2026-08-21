@@ -52,7 +52,10 @@ class Bank:
             self.showMenu()
     # function for Deposit Money
     def deposit(self):
-        pass
+        amt=input("ENter amount to deposit: ")
+        pin=int(input("Enter pin: "))
+        if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
+            self.account["bal"][self]
 
     # function for Withdraw Money
     def withdraw(self):

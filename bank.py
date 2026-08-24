@@ -59,8 +59,17 @@ class Bank:
 
     # function for Withdraw Money
     def withdraw(self):
-        pass
-
+        amt=input("ENter amount to withdraw: ")
+        pin=int(input("Enter pin: "))
+        if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
+            if int(amt)<=self.account["bal"][self.account["acc"].index(self.acc)]:
+                self.account["bal"][self.account["acc"].index(self.acc)]-=int(amt)
+                print("Withdraw Successfully")
+                print("Total Balance: ",self.account["bal"][self.account["acc"].index(self.acc)])
+                self.showMenu()
+            else:
+                print("Insufficient Balance")
+                self.showMenu()
     # function for Reset Pin
     def resetPin(self):
         pass

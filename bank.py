@@ -72,7 +72,15 @@ class Bank:
                 self.showMenu()
     # function for Reset Pin
     def resetPin(self):
-        pass
+        pin=int(input("Enter old pin: "))
+        if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
+            newPin=int(input("Enter new pin: "))
+            self.account["pin"][self.account["acc"].index(self.acc)]=newPin
+            print("Pin Reset Successfully")
+            self.showMenu()
+        else:
+            print("You entered wrong pin")
+            self.showMenu()
 
     # function for Self Transfer
     def selfTransfer(self):

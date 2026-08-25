@@ -84,7 +84,17 @@ class Bank:
 
     # function for Self Transfer
     def selfTransfer(self):
-        pass
+        amt=input("ENter amount to transfer: ")
+        pin=int(input("Enter pin: "))
+        if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
+            if int(amt)<=self.account["bal"][self.account["acc"].index(self.acc)]:
+                self.account["bal"][self.account["acc"].index(self.acc)]-=int(amt)
+                print("Transfer Successfully")
+                print("Total Balance: ",self.account["bal"][self.account["acc"].index(self.acc)])
+                self.showMenu()
+            else:
+                print("Insufficient Balance")
+                self.showMenu()
 
     # function for Transfer to Other Account 
     def transfertoOtherAccount(self):

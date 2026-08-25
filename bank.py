@@ -55,7 +55,10 @@ class Bank:
         amt=input("ENter amount to deposit: ")
         pin=int(input("Enter pin: "))
         if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
-            self.account["bal"][self]
+            self.account["bal"][self.account["acc"].index(self.acc)]+=int(amt)
+            print("Deposit Successfully")
+            print("Total Balance: ",self.account["bal"][self.account["acc"].index(self.acc)])
+            self.showMenu()
 
     # function for Withdraw Money
     def withdraw(self):
@@ -98,7 +101,19 @@ class Bank:
 
     # function for Transfer to Other Account 
     def transfertoOtherAccount(self):
-        pass
+        acc=int(input("Enter account number to transfer: "))
+        amt=input("ENter amount to transfer: ")
+        pin=int(input("Enter pin: "))
+        if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
+            if int(amt)<=self.account["bal"][self.account["acc"].index(self.acc)]:
+                self.account["bal"][self.account["acc"].index(self.acc)]-=int(amt)
+                self.account["bal"][self.account["acc"].index(acc)]+=int(amt)
+                print("Transfer Successfully")
+                print("Total Balance: ",self.account["bal"][self.account["acc"].index(self.acc)])
+                self.showMenu()
+            else:
+                print("Insufficient Balance")
+                self.showMenu()
 
     # function for LogOut
     def logOut(self):

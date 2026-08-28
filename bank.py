@@ -117,6 +117,7 @@ class Bank:
 
     # function for LogOut
     def logOut(self):
-        pass
+        print("Logout Successfully")
+        exit()
 
 b1=Bank(101,1111,1000)

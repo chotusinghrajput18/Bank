@@ -1,4 +1,4 @@
-# Bank Class 
+# Bank Class update something name, or anything
 class Bank:
     account={
         "acc":[101,102,103,104],
@@ -9,7 +9,7 @@ class Bank:
         self.acc=acc
         self.pin=pin
         self.bal=bal
-        print("Login Successfully")
+        print("You are Logged in Successfully")
         self.showMenu()
     # Function for checking balance
 
@@ -32,7 +32,7 @@ class Bank:
         print("5. Self Transfer")
         print("6. Transfer to Other Account")
         print("7. Logout")
-        choice=int(input("Enter YOur choice: "))
+        choice=int(input("Enter Your choice: "))
         if choice == 1 :
             self.showBal()
         elif choice ==2:
@@ -52,7 +52,7 @@ class Bank:
             self.showMenu()
     # function for Deposit Money
     def deposit(self):
-        amt=input("ENter amount to deposit: ")
+        amt=input("Enter amount to deposit: ")
         pin=int(input("Enter pin: "))
         if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
             self.account["bal"][self.account["acc"].index(self.acc)]+=int(amt)
@@ -62,7 +62,7 @@ class Bank:
 
     # function for Withdraw Money
     def withdraw(self):
-        amt=input("ENter amount to withdraw: ")
+        amt=input("Enter amount to withdraw: ")
         pin=int(input("Enter pin: "))
         if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
             if int(amt)<=self.account["bal"][self.account["acc"].index(self.acc)]:
@@ -87,7 +87,7 @@ class Bank:
 
     # function for Self Transfer
     def selfTransfer(self):
-        amt=input("ENter amount to transfer: ")
+        amt=input("Enter amount to transfer: ")
         pin=int(input("Enter pin: "))
         if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
             if int(amt)<=self.account["bal"][self.account["acc"].index(self.acc)]:
@@ -102,7 +102,7 @@ class Bank:
     # function for Transfer to Other Account 
     def transfertoOtherAccount(self):
         acc=int(input("Enter account number to transfer: "))
-        amt=input("ENter amount to transfer: ")
+        amt=input("Enter amount to transfer: ")
         pin=int(input("Enter pin: "))
         if pin==self.account["pin"][self.account["acc"].index(self.acc)]:
             if int(amt)<=self.account["bal"][self.account["acc"].index(self.acc)]:

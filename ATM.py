@@ -16,3 +16,16 @@ class ATM:
                 self.showMenu(acc)
             else:
                 print("Invalid Pin")
+    def showMenu(self, acc):
+        print("Welcome to the ATM")
+        print("1. Check Balance")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Transfer to others acc")
+        print("5. Reset Pin")
+        print("6. Creating new Account")
+    def checkBalance(self, acc):
+        index= self.acc.index(acc)
+        Pin=int(input("Entter your pin:"))
+        if Pin==self.Accounts["pin"][index]:
+            print("Available Balance : Rs. ",self.Accounts["bal"])git 

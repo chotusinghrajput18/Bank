@@ -26,6 +26,8 @@ class ATM:
         print("6. Creating new Account")
     def checkBalance(self, acc):
         index= self.acc.index(acc)
-        Pin=int(input("Entter your pin:"))
-        if Pin==self.Accounts["pin"][index]:
-            print("Available Balance : Rs. ",self.Accounts["bal"])git 
+        print("Your balance is: ", self.Accounts["bal"][index])
+    def deposit(self, acc, amount):
+        index= self.acc.index(acc)
+        self.Accounts["bal"][index]+= amount
+        print("Deposit Successful. New balance is: ", self.Accounts["bal"][index])

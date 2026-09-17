@@ -31,3 +31,10 @@ class ATM:
         index= self.acc.index(acc)
         self.Accounts["bal"][index]+= amount
         print("Deposit Successful. New balance is: ", self.Accounts["bal"][index])
+    def withdraw(self, acc, amount):
+        index= self.acc.index(acc)
+        if self.Accounts["bal"][index]>= amount:
+            self.Accounts["bal"][index]-= amount
+            print("Withdrawal Successful. New balance is: ", self.Accounts["bal"][index])
+        else:
+            print("Insufficient Balance")

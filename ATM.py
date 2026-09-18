@@ -57,3 +57,11 @@ class ATM:
             print("Pin Reset Successful")
         else:
             print("Invalid Old Pin")
+    def createAccount(self, acc, pin, balance):
+        if acc not in self.acc:
+            self.acc.append(acc)
+            self.Accounts["pin"].append(pin)
+            self.Accounts["bal"].append(balance)
+            print("Account Created Successfully")
+        else:
+            print("Account Number already exists")

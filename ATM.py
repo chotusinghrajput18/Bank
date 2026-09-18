@@ -50,3 +50,10 @@ class ATM:
                 print("Invalid Account Number")
         else:
             print("Insufficient Balance")
+    def resetPin(self, acc, old_pin, new_pin):
+        index= self.acc.index(acc)
+        if old_pin==self.Accounts["pin"][index]:
+            self.Accounts["pin"][index]= new_pin
+            print("Pin Reset Successful")
+        else:
+            print("Invalid Old Pin")

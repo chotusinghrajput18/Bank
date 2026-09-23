@@ -8,7 +8,7 @@ class ATM:
         self.balance= balance
         self.acc= self.Accounts["acc"]
         self.balance= self.Accounts["bal"]
-        self.login()
+        self.login(int(input("Enter your account number: ")), int(input("Enter your pin: ")))
     def login(self, acc, pin):
         if acc in self.acc:
             index= self.acc.index(acc)

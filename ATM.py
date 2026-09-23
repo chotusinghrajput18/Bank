@@ -8,6 +8,7 @@ class ATM:
         self.balance= balance
         self.acc= self.Accounts["acc"]
         self.balance= self.Accounts["bal"]
+        self.login()
     def login(self, acc, pin):
         if acc in self.acc:
             index= self.acc.index(acc)
@@ -24,6 +25,19 @@ class ATM:
         print("4. Transfer to others acc")
         print("5. Reset Pin")
         print("6. Creating new Account")
+        choice =int(input("enter choice: "))
+        if choice==1:
+            self.checkBalance()
+        elif choice==2:
+            self.deposit()
+        elif choice==3:
+            self.withdraw()
+        elif choice==4:
+            self.transfer()
+        elif choice==5:
+            self.resetPin()
+        elif choice==7:
+            self.createAccount()
     def checkBalance(self, acc):
         index= self.acc.index(acc)
         print("Your balance is: ", self.Accounts["bal"][index])
@@ -65,3 +79,4 @@ class ATM:
             print("Account Created Successfully")
         else:
             print("Account Number already exists")
+a1=ATM()

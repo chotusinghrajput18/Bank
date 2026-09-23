@@ -27,17 +27,19 @@ class ATM:
         print("6. Creating new Account")
         choice =int(input("enter choice: "))
         if choice==1:
-            self.checkBalance()
+            self.checkBalance(acc)
         elif choice==2:
-            self.deposit()
+            self.deposit(acc, int(input("Enter amount to deposit: ")))
         elif choice==3:
-            self.withdraw()
+            self.withdraw(acc, int(input("Enter amount to withdraw: ")))
         elif choice==4:
-            self.transfer()
+            to_acc = int(input("Enter account number to transfer to: "))
+            amount = int(input("Enter amount to transfer: "))
+            self.transfer(acc, to_acc, amount)
         elif choice==5:
-            self.resetPin()
+            self.resetPin(acc, int(input("Enter old pin: ")), int(input("Enter new pin: ")))
         elif choice==7:
-            self.createAccount()
+            self.createAccount(int(input("Enter new account number: ")), int(input("Enter new pin: ")), int(input("Enter initial balance: ")))
     def checkBalance(self, acc):
         index= self.acc.index(acc)
         print("Your balance is: ", self.Accounts["bal"][index])

@@ -29,3 +29,5 @@ class Library:
         return len(self.books)
     def __getitem__(self, index):
         return self.books[index]
+L1=Library()
+L1.addBook()

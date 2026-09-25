@@ -9,7 +9,7 @@ class Practice:
         if ch==1:
             self.registration()
     def registration(self):
-        while self.n!=0:
+        while self.n>0:
             name=input("Enter your name: ")
             if name.isalpha():
                 while self.n!=0:

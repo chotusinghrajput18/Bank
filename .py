@@ -12,10 +12,10 @@ class Practice:
         while self.n>0:
             name=input("Enter your name: ")
             if name.isalpha():
-                while self.n!=0:
+                while self.n>0:
                     phone=input("Enter phone no.: " )
                     if len(phone)==10 and phone.isalnum():
-                        while self.n!=0:
+                        while self.n>0:
                             email=input("Enter your email: ")
                             if '@' in email and len(email)>8:
                                 print("Registration successfull ")

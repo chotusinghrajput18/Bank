@@ -58,9 +58,6 @@ class Practice:
         ch=int(input("Enter choice: "))
         if ch==1:
             self.snakeGame()
-    
-
-
     def home(self):
         pass
 p=Practice()

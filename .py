@@ -8,6 +8,9 @@ class Practice:
         ch=int(input("Enter a choice: "))
         if ch==1:
             self.registration()
+        elif ch==2:
+            self.guestlogin()
+        
     def registration(self):
         while self.n>0:
             name=input("Enter your name: ")
@@ -20,6 +23,7 @@ class Practice:
                             if '@' in email and len(email)>8:
                                 print("Registration successfull ")
                                 self.n=0
+                                self.home()
                                 break
                             else:
                                 print("invalid input")
@@ -27,7 +31,11 @@ class Practice:
                     else:
                         print("invalid phone")
                         continue
-                else:
-                    print("Invalid name")
-                    continue
+            else:
+                print("Invalid name")
+            continue
+    def guestLogin(self):
+        pass
+    def home(self):
+        pass
 p=Practice()
